@@ -1,0 +1,155 @@
+<html>
+<head>
+    <style type= "text/css">
+        body {
+            background-color: #faf561;
+            color: #5e5e5e;
+            text-align:center;
+        }
+        
+        div {
+            width: 50%;
+            margin: 10px auto;
+            padding: 10px;
+            border: 5px solid black;
+        }
+        
+        div.longText {
+            border: 5px solid #ffabd4;
+        }
+        
+        div.shortText {
+            border: 5px solid #ff6eb5;
+        }
+        
+        div.clicked {
+            background-color: white !important;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Personal Info App</h1>
+    
+    <div class = "longText">
+    <h3>My Summer</h3>
+    <p>My summer was fun! I went to a lot of concerts and took a trip to Milwaukee. A lot of my friends also left for college so I got to go with some of them to set up their dorm!</p>
+        <img src = "concert.jpg" width = 250>
+    </div>
+    
+    <div class = "longText">
+    <h3>Plans After High School</h3>
+    <p>After high school I plan on attending college at either Belmont Unviersity or New York University. I want to major in music business or audio engineering with a minor in computer science.</p>
+    </div>
+        
+    <div class = "longText">
+    <h3>My Hobbies</h3>
+    <p>I like viedeography and video editing. I also enjoy photography! I'm always listening to music and messing around with music production softwares. I love making friendship bracelets in my free time as well!</p>
+    <img src = "friendship_bracelet.jfif" width=200 id="img1">
+    </div>
+     
+    <div class = "longText">
+    <h3>Why My Favourite Colour is Yellow</h3>
+    <p>Yellow is my favourite colour because it is the superior colour. It's very happy and positive which reminds me of my personality. I always try to be positive and make others laugh or smile! Everytime I walk into my room it makes me smile since it's so bright and cheerful.</p>
+    </div>
+    
+    <script>
+        /*let name = "Jenna Wilkinson"
+        let age = 17
+        create an object called person*/
+        let person = {
+            "firstName" : "Jenna",
+            "lastName" : "Wilkinson",
+            "age" : 17,
+            "favColor" : "Yellow",
+            "siblings": ["George", " Jacqueline"],
+            "favArtists": ["Shawn Mendes", " John Mayer", " Billie Eilish", 
+                        " Alessia Cara", " Ariana Grande", " Julia Michaels"],
+            "favFood" : "mac and cheese",
+            "favBoardGame" : "Monopoly",
+            "favShows": ["Stranger Things", " How I Met Your Mother", " The Office", " New Girl"]
+        }
+        
+        console.log(person)
+        console.log(person.age)
+        /*let elem = document.createElement('h3')
+        elem.innerHTML = person.firstName
+        document.body.appendChild(elem)*/
+        
+        let elem = document.createElement('div')
+        elem.classList.add('shortText')
+        elem.innerHTML = `<h3>Name</h3>
+        ${person.firstName} ${person.lastName}`
+        document.body.appendChild(elem)
+        
+        /*let elem = document.createElement('div')
+        elem.innerHTML = `<h3>Name</h3>
+        ${person.firstName} ${person.lastName}`
+        document.body.appendChild(elem)*/
+        
+        elem = document.createElement('div')
+        elem.classList.add('shortText')
+        elem.innerHTML = `<h3>Age</h3>
+        ${person.age}`
+        document.body.appendChild(elem)
+        
+        elem = document.createElement('div')
+        elem.classList.add('shortText')
+        elem.innerHTML = `<h3>Favourite Color</h3>
+        ${person.favColor}`
+        document.body.appendChild(elem)
+        
+        elem = document.createElement('div')
+        elem.classList.add('shortText')
+        elem.innerHTML = `<h3>Siblings</h3>
+        ${person.siblings}`
+        document.body.appendChild(elem)
+        
+        elem = document.createElement('div')
+        elem.classList.add('shortText')
+        elem.innerHTML = `<h3>Favourite Artists</h3>
+        ${person.favArtists}`
+        document.body.appendChild(elem)
+        
+        elem = document.createElement('div')
+        elem.classList.add('shortText')
+        elem.innerHTML = `<h3>Favourite Food</h3>
+        ${person.favFood}`
+        document.body.appendChild(elem)
+        
+        elem = document.createElement('div')
+        elem.classList.add('shortText')
+        elem.innerHTML = `<h3>Favourite Board Game</h3>
+        ${person.favBoardGame}`
+        document.body.appendChild(elem)
+        
+        elem = document.createElement('div')
+        elem.classList.add('shortText')
+        elem.innerHTML = `<h3>Favourite Shows</h3>
+        ${person.favShows}`
+        document.body.appendChild(elem)
+        
+        //get a reference to elements on the page
+        let divs = document.querySelectorAll('div');
+        for (let i = 0; i < divs.length; i++) {
+            let div = divs[i];
+            div.addEventListener('click', handleClick);
+        }
+        
+        function handleClick(event) {
+            //event.target.style.backgroundColor = "white";
+            event.target.classList.toggle('clicked');
+        }
+        
+        document.querySelector('#img1').addEventListener('click',handleImgClick)
+        
+        function handleImgClick(event) {
+            if (event.target.width == 200)
+                event.target.width = 100
+            else
+                event.target.width = 200
+        }
+
+    </script>
+</body>
+</html>
